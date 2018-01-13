@@ -1,0 +1,24 @@
+{
+  "name": "interval-visualizer",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "pretest": "standard",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "bankai build app.js -d --optimize",
+    "start": "bankai start app.js -d --optimize"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "choo": "^6.6.1",
+    "luxon": "^0.3.0",
+    "tachyons": "^4.9.1"
+  },
+  "devDependencies": {
+    "bankai": "^9.2.0",
+    "sheetify": "^6.2.0",
+    "standard": "^10.0.3"
+  }
+}
