@@ -20,6 +20,7 @@ deploy:
   keep-history: true
   local-dir: ./dist
   fqdn: intervals.mattross.io
+  verbose: true
   on:
     branch: master
 
