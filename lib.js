@@ -55,6 +55,7 @@ const visualize = state => {
   const end = now.plus(dur)
 
   const denominator = compose(
+    map(invoke('replace', /s$/, '')),
     nth(0),
     toPairs,
     invoke('toObject'))(end.diff(now, ['minutes', 'hours', 'days', 'weeks']))
@@ -66,7 +67,7 @@ const visualize = state => {
         map(([type, count]) => ` ${Math.ceil(count)} ${type}`),
         toPairs)(now.plus(Duration.fromObject({ seconds: state.interval })).diff(now, ['seconds', 'minutes', 'hours', 'days', 'weeks']).toObject())}</h2>
       <section class="${prefix}">
-        ${intervals[denominator[0]](Math.ceil(denominator[1]), 0, state.interval, state.depth)}
+        ${intervals(denominator[0])(Math.ceil(denominator[1]), 0, state.interval, state.depth - 1)}
       </section>
     </div>
     `

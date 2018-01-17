@@ -8,19 +8,12 @@ const filter = fn => arr => arr
     return memo
   }, [])
 
-const invoke = fn => obj => obj[fn]()
+const invoke = (fn, ...args) => obj => obj[fn] ? obj[fn](...args) : obj
 
 const map = fn => arr => {
   if (arr instanceof Array) return arr.map(fn)
   return Object.keys(arr).map(key => fn(arr[key]))
 }
-
-const mathMod = (m, p) => ((m % p) + p) % p
-
-const max = (...xs) => xs.reduce((m, x) => {
-  if (m > x) return m
-  return x
-}, -Infinity)
 
 const nth = n => arr => arr[n]
 
@@ -41,8 +34,6 @@ module.exports = {
   filter,
   invoke,
   map,
-  mathMod,
-  max,
   nth,
   reject,
   sort,
