@@ -12,7 +12,7 @@ exclude:
   - .*~
   - .git
 name: Interval Visualizer
-source: dist
+source: ./dist
 timezone: America/New_York
 url: http://www.mattross.io/interval-visualizer
 host: "0.0.0.0"
