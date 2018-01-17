@@ -8,9 +8,9 @@ css('tachyons')
 const app = choo()
 
 app.use((state, emitter) => {
-  state.interval = 61200
-  state.depth = 1
-  state.repeats = 5
+  state.interval = 3780
+  state.depth = 2
+  state.repeats = 2
 
   emitter.on('change:interval', interval => {
     state.interval = +interval || 1
@@ -30,13 +30,19 @@ app.route('/', function view (state, emit) {
   return html`
     <body class="w-100 h-100">
       <main class="w-100 cf helvetica dark-gray bg-white pa3 mw9 center">
-        <form>
-          <label for="interval" class="f6 b db mb2 lh-copy">Interval <span class="normal black-60">in seconds</span></label>
-          <input id="interval" name="interval" class="pa2 input-reset ba bg-transparent measure" type="text" value=${state.interval} onchange=${changeInterval} />
-          <label for="depth" class="f6 b db mb2 lh-copy">Depth <span class="normal black-60">max</span></label>
-          <input id="depth" name="depth" class="pa2 input-reset ba bg-transparent measure" type="text" value=${state.depth} onchange=${changeDepth} />
-          <label for="depth" class="f6 b db mb2 lh-copy">Repeats <span class="normal black-60">max</span></label>
-          <input id="depth" name="depth" class="pa2 input-reset ba bg-transparent measure" type="text" value=${state.repeats} onchange=${changeRepeats} />
+        <form class="flex flex-wrap justify-between">
+          <div class="">
+            <input id="interval" name="interval" class="w-100 pa2 input-reset ba bg-transparent measure" type="text" value=${state.interval} onchange=${changeInterval} />
+            <label for="interval" class="f6 b db mb2 lh-copy">Interval <span class="normal black-60">in seconds</span></label>
+          </div>
+          <div class="">
+            <input id="depth" name="depth" class="w-100 pa2 input-reset ba bg-transparent measure" type="text" value=${state.depth} onchange=${changeDepth} />
+            <label for="depth" class="f6 b db mb2 lh-copy">Depth <span class="normal black-60">max</span></label>
+          </div>
+          <div class="">
+            <input id="depth" name="depth" class="w-100 pa2 input-reset ba bg-transparent measure" type="text" value=${state.repeats} onchange=${changeRepeats} />
+            <label for="depth" class="f6 b db mb2 lh-copy">Repeats <span class="normal black-60">max</span></label>
+          </div>
         </form>
         ${visualize(state)}
       </main>
