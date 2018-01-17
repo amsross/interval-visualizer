@@ -1,13 +1,27 @@
 language: node_js
 node_js:
-  - "node"
+  - node
 install: npm install
 cache:
   directories:
     - node_modules
 script:
   - npm test
+  - npm run build
+
 branches:
   only:
-    - gh-pages
-    - /.*/
+    - master
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: "$GITHUB_TOKEN"
+  keep-history: true
+  local-dir: ./dist
+  on:
+    branch: master
+
+env:
+  global:
+    secure: ZUptrQLyX/1v3Z8mZZ/DAeUcO+EJ6E0Y6slqNuZXitwWDE9iQaZh2hVv2jT+1iwyceA+VDXDbxLKIhjDol2L9yg1Hs1r328Xrrt9iEsQ9pKQu3EKxlZR5OhdqU7t1wkA9jBYb3/2CLWTYQ9prbWZ1fKEY0mv9d8Ky+WIC6COB6M4CFjApcJ/5tDKU5BbWC2F8UZLO+uhVUbplrQ+H+iP4EXVxAH/aYP/eJmk3PDK468zWPO6H/5XujVTL5N/3xBXfTS8xXjEyY4DpiU9OgbvA6EONPTx6YRKnvQ2Sh60bYDRHk9hMGkbgrDxCErXWarKG0lcuVzI2CYJ8LDyJ/3wBmJBSXqBI6nAQ6piBeJx68wsKrkbNJF2m+se4u19E3oTGBtv9TevmSziAXoDjUMkc4FO0Wy9NnFkEoVAtwtAH5JAIJuFEPJA7CIlKGHboD6XdjzHVjcDURY7hd4rFD05GJR/T1r9gkErgqXn8pH+qUTMPs8oHlwHahejylgHpzWoCRXsvHgDOqzaY90AkWDZ3K04KFjcaqb6dzSfmYRFgpZ3a2kYLyrMPjaDh5m1nG2nJXvUAHhrY7yffJsGNvNREfakYKe1yBIYU3SYNe4xKaqT/5vXmJFm5y+FXj9C7c6VfX/p/md6dUA3I5S7n3qxuqlT8bECvYVksnncjeRYcNw=
