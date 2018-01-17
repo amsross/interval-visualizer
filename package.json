@@ -8,14 +8,6 @@
     "build": "rm -rf dist/ && bankai build app.js -d --optimize",
     "start": "bankai start app.js -d --optimize"
   },
-  "browserify": {
-    "transform": [
-      ["copyAsset", {
-        "src": "favicon.ico",
-        "dest": "dist"
-      }]
-    ]
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
