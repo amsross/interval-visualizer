@@ -1,0 +1,20 @@
+# GitHub presets
+safe: true
+lsi: false
+
+repository: amsross/interval-visualizer
+title: Interval Visualizer
+author: Matt Ross
+author_email: matt@mattross.io
+destination: ./_site
+exclude:
+  - docker-compose.yml
+  - .*~
+  - .git
+name: Interval Visualizer
+source: dist
+timezone: America/New_York
+url: https://www.mattross.io/interval-visualizer
+host: "0.0.0.0"
+plugins:
+- jekyll-github-metadata

@@ -5,7 +5,7 @@
   "scripts": {
     "pretest": "standard",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "build": "bankai build app.js -d --optimize",
+    "build": "git rm -rf dist/ && bankai build app.js -d --optimize",
     "start": "bankai start app.js -d --optimize"
   },
   "keywords": [],
