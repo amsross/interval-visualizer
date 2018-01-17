@@ -10,7 +10,7 @@
   },
   "browserify": {
     "transform": [
-      ["copyAsset": {
+      ["copyAsset", {
         "src": "favicon.ico",
         "dest": "dist"
       }]
