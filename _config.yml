@@ -14,7 +14,7 @@ exclude:
 name: Interval Visualizer
 source: dist
 timezone: America/New_York
-url: https://www.mattross.io/interval-visualizer
+url: http://www.mattross.io/interval-visualizer
 host: "0.0.0.0"
 plugins:
-- jekyll-github-metadata
+  - jekyll-github-metadata
