@@ -12,12 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "choo": "^6.6.1",
-    "luxon": "^0.3.0",
-    "tachyons": "^4.9.1"
+    "choo": "^6.13.0",
+    "luxon": "^0.3.1",
+    "tachyons": "^4.11.1"
   },
   "devDependencies": {
-    "bankai": "^9.2.0",
+    "bankai": "^9.14.0",
     "sheetify": "^6.2.0",
     "standard": "^10.0.3"
   }
